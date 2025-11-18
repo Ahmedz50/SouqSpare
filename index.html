@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-pt-20">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق إسبير - دليلك الأول لقطع الغيار في السودان</title>
+  
+<meta name="description" content="سوق إسبير هو دليلك الأول لإيجاد محلات قطع غيار السيارات في السودان. ابحث عن محلات قطع الغيار في ولايتك وتواصل معهم مباشرة بدون وسيط.">
+
+
+<meta name="keywords" content="قطع غيار سيارات، إسبير، سوق إسبير، قطع غيار السودان، محلات قطع غيار الخرطوم، دليل محلات قطع غيار، شراء قطع غيار، قطع غيار كوري، قطع غيار ياباني، أسعار قطع غيار، قطع غيار مستعملة، سيارات السودان، ميكانيكي، أمدرمان، بحري">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome (أيقونات) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Font: Alexandria (خط الإسكندرية) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Alexandria', sans-serif; }
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        .floating-element { animation: float 3s ease-in-out infinite; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- =========== النافبار (شريط التنقل) =========== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- الشعار -->
+            <a href="index.html">
+                <!-- تم تغيير النص في الصورة المؤقتة -->
+                <img src="logo.png" alt="شعار سوق إسبير" style="height: 40px;">
+            </a>
+            
+            <!-- روابط التنقل -->
+            <div class="flex space-x-6 space-x-reverse items-center">
+                <a href="#features-users" class="hidden md:block text-gray-600 hover:text-blue-600 transition duration-300">لأصحاب السيارات</a>
+                <a href="#features-shops" class="hidden md:block text-gray-600 hover:text-blue-600 transition duration-300">لأصحاب المحلات</a>
+                <a href="#cta-shops" class="bg-blue-600 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    سجّل محلك مجاناً
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- ... قسم الهيرو (الرئيسي) ... -->
+        <section id="hero" class="relative bg-gradient-to-br from-blue-700 to-blue-900 text-white py-32 overflow-hidden">
+            <i class="fas fa-cog text-white/10 absolute -top-10 -right-16 text-9xl floating-element" style="animation-duration: 4s;"></i>
+            <i class="fas fa-tools text-white/10 absolute bottom-10 -left-10 text-8xl floating-element"></i>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    أسهل طريقة تلقى بيها قطع غيارك في السودان
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+                    بنجمع ليك كل أصحاب محلات قطع الغيار في مكان واحد. ابحث، قارن، وتواصل معاهم مباشرة.
+                </p>
+                <a href="#stores" class="bg-white text-blue-700 font-bold py-3 px-10 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-search ml-2"></i>
+                    ابدأ البحث الآن
+                </a>
+            </div>
+        </section>
+        
+        <!-- ... الميزات (لأصحاب السيارات) ... -->
+        <section id="features-users" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold">وفر وقتك ومجهودك</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">مصمم خصيصاً ليك</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-xl mx-auto">كل الأدوات اللي بتحتاجها عشان تلقى المحل المناسب بأسرع وقت.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-map-signs text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">دليل منظم حسب المناطق</h3>
+                        <p class="text-gray-600">تصفح المحلات بسهولة حسب ولايتك ومدينتك. نصل بيك إلى المحلات في منطقتك مباشرة دون تعقيد.</p>
+                    </div>
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-handshake text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">تواصل مباشر بدون وسيط</h3>
+                        <p class="text-gray-600">لا توجد عمولات. تواصل مباشرة مع صاحب المحل عبر واتساب أو الهاتف وتفاوض بنفسك على أفضل سعر.</p>
+                    </div>
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-comments text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">تواصل مباشر وسريع</h3>
+                        <p class="text-gray-600">اتصل بصاحب المحل مباشرة أو أرسل ليه واتساب بضغطة زر واحدة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ... الميزات (لأصحاب المحلات) ... -->
+        <section id="features-shops" class="py-20 bg-blue-50 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold">انضم لشبكتنا</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">كبّر شغلك وزيّد مبيعاتك</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mx-auto mb-5"><i class="fas fa-plus-circle text-3xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">إضافة مجانية لبياناتك</h3>
+                        <p class="text-gray-600">سجل بيانات محلك الأساسية مجاناً وخليك موجود على الموقع.</p>
+                    </div>
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mx-auto mb-5"><i class="fas fa-chart-line text-3xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">وصول لعملاء جدد</h3>
+                        <p class="text-gray-600">الآلاف بيبحثوا عن قطع غيار يومياً. خليك خيارهم الأول.</p>
+                    </div>
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mx-auto mb-5"><i class="fas fa-star text-3xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">باقة الاشتراك المميز</h3>
+                        <p class="text-gray-600">ميّز محلك في نتائج البحث، أضف صور، وخليه يظهر للأولوية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ... قسم دليل المحلات (عينة) ... -->
+        <section id="stores" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">عينة من المحلات المسجلة</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-xl mx-auto">تصفح بعض المحلات المميزة في دليلنا الشامل.</p>
+                </div>
+                <div id="stores-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- سيتم ملء الكروت هنا بواسطة الجافاسكربت -->
+                </div>
+                <div class="text-center mt-16">
+                    <a href="stores.html" class="bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        عرض كل المحلات
+                        <i class="fas fa-arrow-left mr-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== 5. قسم "كيف يعمل الموقع" (القسم الجديد) =========== -->
+        <section id="how-it-works" class="py-20 bg-blue-50 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold">خطوات بسيطة</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">كيف يعمل الموقع؟</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-xl mx-auto">مهمتنا هي ربطك بالتاجر مباشرة بأسرع وأسهل طريقة.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- خطوة 1: ابحث -->
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-search-location text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">1. ابحث</h3>
+                        <p class="text-gray-600">استخدم صفحة "كل المحلات" لتصفية البحث حسب ولايتك ومدينتك للوصول للمحلات في منطقتك.</p>
+                    </div>
+                    
+                    <!-- خطوة 2: تواصل -->
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-comments text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">2. تواصل</h3>
+                        <p class="text-gray-600">تصفح المحلات التي ظهرت لك وتواصل مع التاجر المناسب عبر زر الواتساب أو الاتصال المباشر.</p>
+                    </div>
+                    
+                    <!-- خطوة 3: اتفق -->
+                    <div class="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-5">
+                            <i class="fas fa-handshake text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">3. اتفق</h3>
+                        <p class="text-gray-600">استفسر عن القطعة واحصل على أفضل سعر. لا يوجد وسيط ولا عمولات، الاتفاق بينك وبين التاجر مباشرة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== 6. قسم نداء الإجراء (CTA) (أصبح قسماً مستقلاً) =========== -->
+        <section id="cta-shops" class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-20 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">هل أنت صاحب محل قطع غيار؟</h2>
+                    <p class="text-lg text-blue-100 mb-8">
+                        لا تفوّت الفرصة. انضم لشبكتنا اليوم مجاناً ودع مئات العملاء يصلون إليك بسهولة.
+                    </p>
+                    <a href="https://wa.me/249112410643?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%F0%9F%91%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%85%D8%AD%D9%84%D9%91%D9%8A%20%D9%81%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D8%B3%D9%88%D9%82%20%D8%A5%D8%B3%D8%A8%D9%8A%D8%B1%20%F0%9F%9B%8D%EF%B8%8F" class="bg-white text-blue-700 font-bold py-3 px-10 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-plus-circle ml-2"></i>
+                        سجّل محلك الآن
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- =========== الفوتر (تذييل الصفحة) =========== -->
+    <footer class="bg-gray-800 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- العمود الأول: عن الموقع -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <!-- تم تغيير الشعار -->
+                        <img src="logo2.png" alt="شعار سوق إسبير" style="height: 45px;">
+                    </h3>
+                    <p class="text-gray-400 max-w-md">
+                        أول وأكبر دليل إلكتروني يربط أصحاب السيارات بمحلات قطع الغيار في جميع أنحاء السودان. مهمتنا هي جعل عملية البحث عن قطع الغيار سهلة، سريعة، وموثوقة.
+                    </p>
+                </div>
+
+                <!-- العمود الثاني: روابط سريعة -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a></li>
+                        <li><a href="stores.html" class="hover:text-blue-400 transition-colors">كل المحلات</a></li>
+                        <li><a href="#features-users" class="hover:text-blue-400 transition-colors">لأصحاب السيارات</a></li>
+                        <li><a href="#cta-shops" class="hover:text-blue-400 transition-colors">سجل محلك</a></li>
+                    </ul>
+                </div>
+                
+                <!-- العمود الثالث: تواصل معنا -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">تابعنا</h4>
+                    <p class="text-gray-400 mb-4">انضم إلينا على شبكات التواصل الاجتماعي.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.tiktok.com/@souqspare?_r=1&_d=dimm4ggc7k7ghk&sec_uid=MS4wLjABAAAAjKODmfBw2rhQjP8nuKF6Ir1I1V0BEJQxsPO_uMHk8IkhCL-aHImCDAgQ1ecqlOxF&share_author_id=7243381703636468742&sharer_language=en&source=h5_m&u_code=e8c2lfl3l3kjc5&timestamp=1763436071&user_id=7243381703636468742&sec_user_id=MS4wLjABAAAAjKODmfBw2rhQjP8nuKF6Ir1I1V0BEJQxsPO_uMHk8IkhCL-aHImCDAgQ1ecqlOxF&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7533466286916323090&share_link_id=2649996c-1b48-478a-b38b-b30d61f8f621&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-blue-400 transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-pink-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+            <div class="text-center text-gray-500">
+                <!-- تم تغيير الحقوق -->
+                <p>&copy; 2025 سوق إسبير. جميع الحقوق محفوظة.</p>
+                <p class="text-sm mt-1">تم التطوير بحب في السودان ❤️</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <!-- =================================================== -->
+    <!-- ========= السكربتات (JavaScript) ========= -->
+    <!-- =================================================== -->
+    <script>
+        
+        // --- (1) دالة جلب وعرض المحلات (تم تعديلها) ---
+        async function fetchAndRenderStores() {
+            try {
+                const response = await fetch('stores.json'); // جلب الملف الخارجي
+                if (!response.ok) throw new Error('Network response was not ok');
+                const storesData = await response.json();
+                
+                const storesSample = storesData.slice(0, 3);
+                
+                const grid = document.getElementById('stores-grid');
+                if (!grid) return;
+                grid.innerHTML = '';
+                
+                const sortedStores = storesSample.sort((a, b) => b.isFeatured - a.isFeatured);
+                
+                sortedStores.forEach(store => {
+                    const labelsHTML = store.specialty.map(label => `
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">
+                            ${label}
+                        </span>
+                    `).join('');
+                    
+                    const featuredClass = store.isFeatured ? 'border-2 border-blue-500 shadow-blue-200' : 'border border-gray-200';
+                    const featuredBadge = store.isFeatured ? `<span class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                               <i class="fas fa-star text-yellow-300 ml-1"></i> محل مميز
+                           </span>` : '';
+
+                    const contactButtonsHTML = `
+                        <div class="grid grid-cols-2 gap-0 border-t border-gray-200">
+                            <a href="https://wa.me/${store.whatsapp}" target="_blank" class="flex items-center justify-center p-4 bg-green-50 text-green-600 font-semibold hover:bg-green-100 transition duration-300">
+                                <i class="fab fa-whatsapp text-2xl ml-3"></i>
+                                <span>واتساب</span>
+                            </a>
+                            <a href="tel:${store.phone}" class="flex items-center justify-center p-4 bg-blue-50 text-blue-600 font-semibold hover:bg-blue-100 transition duration-300 border-r border-gray-200">
+                                <i class="fas fa-phone-alt text-xl ml-3"></i>
+                                <span>اتصال</span>
+                            </a>
+                        </div>
+                    `;
+                    
+                    const mapButtonHTML = (store.isFeatured && store.googleMapsUrl) ? `
+                        <div class="border-t border-gray-200">
+                            <a href="${store.googleMapsUrl}" target="_blank" 
+                               class="flex items-center justify-center p-4 w-full bg-gray-700 text-white font-semibold hover:bg-gray-800 transition duration-300">
+                                <i class="fas fa-map-location-dot text-xl ml-3"></i>
+                                <span>شاهد الموقع على الخريطة</span>
+                            </a>
+                        </div>
+                    ` : '';
+                    
+                    const locationString = `${store.location.city}, ${store.location.address}`;
+                    const cardHTML = `
+                        <div class="fade-in-section bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 ${featuredClass} relative">
+                            ${featuredBadge}
+                            <div class="aspect-video w-full overflow-hidden">
+                                <img src="${store.image}" alt="${store.name}" class="h-full w-full object-cover">
+                            </div>
+                            <div class="p-5 flex-grow">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">${store.name}</h3>
+                                <p class="text-gray-600 mb-4 text-sm">
+                                    <i class="fas fa-map-marker-alt text-gray-400 ml-2"></i>
+                                    ${locationString}
+                                </p>
+                                <div class="mb-5 flex flex-wrap gap-2">
+                                    ${labelsHTML}
+                                </div>
+                            </div>
+                            <div>
+                                ${contactButtonsHTML}
+                                ${mapButtonHTML}
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += cardHTML;
+                });
+                observeFadeInElements();
+            } catch (error) {
+                console.error("Failed to fetch stores data:", error);
+                const grid = document.getElementById('stores-grid');
+                if(grid) grid.innerHTML = "<p class='text-center text-red-500'>فشل تحميل بيانات المحلات. يرجى المحاولة لاحقاً.</p>";
+            }
+        }
+        
+        // --- (2) دالة تفعيل تأثيرات الظهور (Fade-in) ---
+        function observeFadeInElements() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+        
+        // --- (3) تشغيل كل شيء عند تحميل الصفحة ---
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAndRenderStores(); // جلب البيانات وعرضها
+            observeFadeInElements(); // تفعيل الأنيميشن
+        });
+        
+    </script>
+
+</body>
+</html>

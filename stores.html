@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-pt-20">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل المحلات - سوق إسبير</title>
+    
+    
+<meta name="description" content="سوق إسبير هو دليلك الأول لإيجاد محلات قطع غيار السيارات في السودان. ابحث عن محلات قطع الغيار في ولايتك وتواصل معهم مباشرة بدون وسيط.">
+
+
+<meta name="keywords" content="قطع غيار سيارات، إسبير، سوق إسبير، قطع غيار السودان، محلات قطع غيار الخرطوم، دليل محلات قطع غيار، شراء قطع غيار، قطع غيار كوري، قطع غيار ياباني، أسعار قطع غيار، قطع غيار مستعملة، سيارات السودان، ميكانيكي، أمدرمان، بحري">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome (أيقونات) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Font: Alexandria (خط الإسكندرية) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Alexandria', sans-serif; background-color: #f8f9fa; }
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        html { scroll-behavior: smooth; }
+        #search-input::placeholder { color: #9ca3af; transition: color 0.3s; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- =========== النافبار (شريط التنقل) =========== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- الشعار (يرجع للصفحة الرئيسية) -->
+            <a href="index.html">
+                <img src="logo.png" alt="شعار سوق إسبير" style="height: 40px;">
+            </a>
+            
+            <!-- زر تواصل معنا (ينزل للفوتر) -->
+            <a href="https://wa.me/249112410643" class="bg-blue-50 text-blue-700 px-5 py-2 rounded-full font-medium hover:bg-blue-100 transition duration-300 flex items-center">
+                <i class="fab fa-whatsapp ml-2"></i>
+                <span>تواصل معنا</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- =========== قسم الفلاتر والبحث =========== -->
+        <section class="py-12 bg-white shadow-sm border-b border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-blue-900">
+                        تصفح جميع المحلات
+                    </h1>
+                    <p class="text-lg text-gray-600 mt-2">استخدم الفلاتر أو البحث للوصول إلى المحل الذي تحتاجه بسرعة.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-gray-50 p-6 rounded-xl">
+                    <!-- حقل البحث -->
+                    <div class="md:col-span-3 lg:col-span-1">
+                        <label for="search-input" class="block text-sm font-medium text-gray-700 mb-1">بحث سريع:</label>
+                        <div class="relative">
+                            <input type="text" id="search-input" class="w-full p-3 pr-10 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ابحث عن: الخرطوم...">
+                            <span class="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-400">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- فلتر الولاية -->
+                    <div>
+                        <label for="state-filter" class="block text-sm font-medium text-gray-700 mb-1">اختر الولاية:</label>
+                        <select id="state-filter" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">كل الولايات</option>
+                        </select>
+                    </div>
+                    
+                    <!-- فلتر المدينة -->
+                    <div>
+                        <label for="city-filter" class="block text-sm font-medium text-gray-700 mb-1">اختر المدينة:</label>
+                        <select id="city-filter" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
+                            <option value="all">كل المدن</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== قسم عرض المحلات =========== -->
+        <section id="stores" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- ملخص نتائج البحث -->
+                <div id="results-summary" class="mb-8 pb-4 border-b border-gray-200">
+                    <!-- سيتم ملؤه بالجافاسكربت -->
+                </div>
+
+                <!-- شبكة عرض المحلات -->
+                <div id="stores-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- سيتم ملؤه بالجافاسكربت -->
+                </div>
+                
+                <!-- رسالة عند عدم وجود نتائج -->
+                <div id="no-results" class="hidden text-center py-20">
+                    <i class="fas fa-search-minus text-6xl text-gray-300 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-700">لا توجد نتائج مطابقة</h3>
+                    <p class="text-gray-500 mt-2">حاول تغيير خيارات الفلترة أو البحث.</p>
+                </div>
+
+                <!-- زر عرض المزيد (جديد) -->
+                <div id="load-more-container" class="text-center mt-12" style="display: none;">
+                    <button id="load-more-button" class="bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        عرض المزيد
+                        <i class="fas fa-chevron-down mr-2"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- =========== الفوتر (تذييل الصفحة) =========== -->
+    <footer id="footer-contact" class="bg-gray-800 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- العمود الأول: عن الموقع -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <img src="logo2.png" alt="شعار سوق إسبير" style="height: 45px;">
+                    </h3>
+                    <p class="text-gray-400 max-w-md">
+                        أول وأكبر دليل إلكتروني يربط أصحاب السيارات بمحلات قطع الغيار في جميع أنحاء السودان. مهمتنا هي جعل عملية البحث عن قطع الغيار سهلة، سريعة، وموثوقة.
+                    </p>
+                </div>
+
+                <!-- العمود الثاني: روابط سريعة -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a></li>
+                        
+                        <li><a href="index.html#features-users" class="hover:text-blue-400 transition-colors">لأصحاب السيارات</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- العمود الثالث: تواصل معنا -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">تابعنا وتواصل معنا</h4>
+                    <p class="text-gray-400 mb-4">انضم إلينا على شبكات التواصل الاجتماعي.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.tiktok.com/@souqspare" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-pink-500 transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-green-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+            <div class="text-center text-gray-500">
+                <p>&copy; 2025 سوق إسبير. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <!-- =================================================== -->
+    <!-- ========= السكربتات (JavaScript) ========= -->
+    <!-- =================================================== -->
+    <script>
+        
+        // --- (1) بيانات الولايات والمدن ---
+        const sudanStates = {
+            "all": [],
+            "الخرطوم": ["الخرطوم", "أمدرمان", "بحري"],
+            "الجزيرة": ["ود مدني", "الحصاحيصا", "المناقل"],
+            "البحر الأحمر": ["بورتسودان", "سواكن", "طوكر"],
+            "كسلا": ["كسلا", "حلفا الجديدة"],
+            "القضارف": ["القضارف", "دوكة", "القلابات"],
+            "سنار": ["سنجة", "الدمازين", "أبو حجار"],
+            "النيل الأبيض": ["كوستي", "ربك", "الدويم"],
+            "النيل الأزرق": ["الدمازين", "الكرمك", "الروصيرص"],
+            "الشمالية": ["دنقلا", "وادي حلفا", "كريمة"],
+            "نهر النيل": ["عطبرة", "الدامر", "شندي", "بربر"],
+            "غرب كردفان": ["الفولة", "النهود", "أبو زبد"],
+            "جنوب كردفان": ["كادقلي", "الدلنج", "هبيلا"],
+            "شمال دارفور": ["الفاشر", "مليط", "كبكابية"],
+            "غرب دارفور": ["الجنينة", "كلبس"],
+            "جنوب دارفور": ["نيالا", "كاس"],
+            "شرق دارفور": ["الضعين", "أبو كارنكا", "عديلة"],
+            "وسط دارفور": ["زالنجي", "نيرتتي", "روكرو"]
+        };
+
+        // --- (2) متغيرات لإدارة البيانات والصفحات ---
+        let allStoresData = [];
+        let filteredStores = [];
+        let currentIndex = 0;
+        const initialLoadCount = 10;
+        const storesPerLoad = 5;
+
+        // --- (3) جلب عناصر DOM ---
+        const grid = document.getElementById('stores-grid');
+        const noResultsDiv = document.getElementById('no-results');
+        const stateFilter = document.getElementById('state-filter');
+        const cityFilter = document.getElementById('city-filter');
+        const searchInput = document.getElementById('search-input');
+        const resultsSummary = document.getElementById('results-summary');
+        const loadMoreContainer = document.getElementById('load-more-container');
+        const loadMoreButton = document.getElementById('load-more-button');
+
+        // --- (4) دالة عرض المحلات (معدلة للإضافة فقط) ---
+        function renderStores(storesToAppend) {
+            if (!grid) return;
+            
+            // هذه الدالة الآن تضيف فقط ولا تمسح
+            storesToAppend.forEach(store => {
+                const labelsHTML = store.specialty.map(label => `<span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">${label}</span>`).join('');
+                const featuredClass = store.isFeatured ? 'border-2 border-blue-500 shadow-blue-200' : 'border border-gray-200';
+                const featuredBadge = store.isFeatured ? `<span class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10"><i class="fas fa-star text-yellow-300 ml-1"></i> محل مميز</span>` : '';
+                const locationString = `${store.location.city}، ${store.location.address} - ${store.location.state}`;
+                
+                const contactButtonsHTML = `
+                    <div class="grid grid-cols-2 gap-0 border-t border-gray-200">
+                        <a href="https://wa.me/${store.whatsapp}" target="_blank" class="flex items-center justify-center p-4 bg-green-50 text-green-600 font-semibold hover:bg-green-100 transition duration-300">
+                            <i class="fab fa-whatsapp text-2xl ml-3"></i>
+                            <span>واتساب</span>
+                        </a>
+                        <a href="tel:${store.phone}" class="flex items-center justify-center p-4 bg-blue-50 text-blue-600 font-semibold hover:bg-blue-100 transition duration-300 border-r border-gray-200">
+                            <i class="fas fa-phone-alt text-xl ml-3"></i>
+                            <span>اتصال</span>
+                        </a>
+                    </div>
+                `;
+                
+                const mapButtonHTML = (store.isFeatured && store.googleMapsUrl) ? `
+                    <div class="border-t border-gray-200">
+                        <a href="${store.googleMapsUrl}" target="_blank" 
+                           class="flex items-center justify-center p-4 w-full bg-gray-700 text-white font-semibold hover:bg-gray-800 transition duration-300">
+                            <i class="fas fa-map-location-dot text-xl ml-3"></i>
+                            <span>شاهد الموقع على الخريطة</span>
+                        </a>
+                    </div>
+                ` : '';
+
+                const cardHTML = `
+                    <div class="fade-in-section bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 ${featuredClass} relative">
+                        ${featuredBadge}
+                        <div class="w-full overflow-hidden aspect-video">
+                           <img src="${store.image}" alt="${store.name}" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-5 flex-grow">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">${store.name}</h3>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                <i class="fas fa-map-marker-alt text-gray-400 ml-2"></i>
+                                ${locationString}
+                            </p>
+                            <div class="mb-5 flex flex-wrap gap-2">
+                                ${labelsHTML}
+                            </div>
+                        </div>
+                        <div>
+                            ${contactButtonsHTML}
+                            ${mapButtonHTML}
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+            
+            // تفعيل الأنيميشن للعناصر الجديدة
+            observeFadeInElements();
+        }
+
+        // --- (5) دوال الفلترة ---
+        function populateStateFilter() {
+            const states = Object.keys(sudanStates).filter(s => s !== 'all');
+            states.sort((a, b) => a.localeCompare(b, 'ar'));
+            states.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state;
+                option.textContent = state;
+                stateFilter.appendChild(option);
+            });
+        }
+
+        function updateCityFilter() {
+            const selectedState = stateFilter.value;
+            cityFilter.innerHTML = '<option value="all">كل المدن</option>';
+            if (selectedState === 'all' || !sudanStates[selectedState]) {
+                cityFilter.disabled = true;
+            } else {
+                cityFilter.disabled = false;
+                const cities = sudanStates[selectedState];
+                cities.sort((a, b) => a.localeCompare(b, 'ar'));
+                cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    cityFilter.appendChild(option);
+                });
+            }
+        }
+        
+        // --- (6) دالة تطبيق الفلترة (معدلة بالكامل) ---
+        function applyFilters() {
+            const selectedState = stateFilter.value;
+            const selectedCity = cityFilter.value;
+            const searchQuery = searchInput.value.toLowerCase().trim();
+            
+            // 1. فلترة البيانات
+            let tempFilteredStores = allStoresData;
+            if (selectedState !== 'all') {
+                tempFilteredStores = tempFilteredStores.filter(store => store.location.state === selectedState);
+            }
+            if (selectedState !== 'all' && selectedCity !== 'all') {
+                tempFilteredStores = tempFilteredStores.filter(store => store.location.city === selectedCity);
+            }
+            if (searchQuery) {
+                tempFilteredStores = tempFilteredStores.filter(store => 
+                    store.name.toLowerCase().includes(searchQuery) ||
+                    store.location.state.toLowerCase().includes(searchQuery) ||
+                    store.location.city.toLowerCase().includes(searchQuery) ||
+                    store.specialty.join(' ').toLowerCase().includes(searchQuery)
+                );
+            }
+            
+            // 2. فرز النتائج
+            filteredStores = tempFilteredStores.sort((a, b) => b.isFeatured - a.isFeatured);
+            
+            // 3. إعادة تعيين العرض
+            currentIndex = 0;
+            grid.innerHTML = ''; // مسح الشبكة الحالية
+            
+            // 4. تحديث الواجهة
+            if (filteredStores.length === 0) {
+                grid.style.display = 'none';
+                noResultsDiv.style.display = 'block';
+                loadMoreContainer.style.display = 'none';
+            } else {
+                grid.style.display = 'grid';
+                noResultsDiv.style.display = 'none';
+                loadMore(initialLoadCount); // تحميل الدفعة الأولى (10)
+            }
+            
+            // 5. تحديث الملخص
+            updateResultsSummary(filteredStores, searchQuery, selectedState, selectedCity);
+            // (سيتم تحديث زر "عرض المزيد" داخل دالة loadMore)
+        }
+        
+        // --- (7) دالة تحميل المزيد من المحلات (جديدة) ---
+        function loadMore(count) {
+            const storesToLoad = filteredStores.slice(currentIndex, currentIndex + count);
+            renderStores(storesToLoad); // إضافة المحلات الجديدة
+            currentIndex += storesToLoad.length;
+            
+            // تحديث حالة زر "عرض المزيد"
+            updateLoadMoreButton();
+        }
+        
+        // --- (8) دالة تحديث زر "عرض المزيد" (جديدة) ---
+        function updateLoadMoreButton() {
+            if (currentIndex >= filteredStores.length) {
+                loadMoreContainer.style.display = 'none'; // إخفاء الزر
+            } else {
+                loadMoreContainer.style.display = 'block'; // إظهار الزر
+            }
+        }
+
+        // --- (9) دالة تحديث ملخص النتائج ---
+        function updateResultsSummary(filteredStores, searchQuery, selectedState, selectedCity) {
+            // (نفس الدالة من الكود السابق، بدون تغيير)
+            const count = filteredStores.length;
+            let countText = "نتيجة";
+            if (count === 1) { countText = "نتيجة واحدة"; }
+            else if (count === 2) { countText = "نتيجتان"; }
+            else if (count > 2 && count < 11) { countText = "نتائج"; }
+            else if (count >= 11) { countText = "نتيجة"; }
+            let text = `<span class="font-bold">${count === 0 ? 'لا توجد' : count}</span> ${countText}`;
+            let filterParts = [];
+            if (searchQuery) { filterParts.push(`للبحث عن "<strong>${searchQuery}</strong>"`); }
+            if (selectedState !== 'all') {
+                let locationText = `في ولاية <strong>${selectedState}</strong>`;
+                if (selectedCity !== 'all') { locationText = `في مدينة <strong>${selectedCity}</strong>`; }
+                filterParts.push(locationText);
+            }
+            if (filterParts.length > 0) { text += `: ${filterParts.join(' ')}`; } 
+            else { text = `عرض كل المحلات المسجلة: <span class="font-bold">${count}</span> محل`; }
+            resultsSummary.innerHTML = `<p class="text-gray-600 text-lg">${text}</p>`;
+        }
+
+
+        // --- (10) دالة تأثير الكتابة للـ Placeholder ---
+        function typingEffect() {
+            // (نفس الدالة من الكود السابق، بدون تغيير)
+            const examples = ["الخرطوم", "تويوتا", "قطع غيار كوري", "زيوت", "بورتسودان"];
+            let exampleIndex = 0; let charIndex = 0; let isDeleting = false;
+            function type() {
+                const currentText = examples[exampleIndex];
+                const displayedText = isDeleting ? currentText.substring(0, charIndex--) : currentText.substring(0, charIndex++);
+                if(searchInput) { searchInput.placeholder = `ابحث عن: ${displayedText}`; } else { return; }
+                if (!isDeleting && charIndex === currentText.length) { isDeleting = true; setTimeout(type, 2000); } 
+                else if (isDeleting && charIndex === 0) { isDeleting = false; exampleIndex = (exampleIndex + 1) % examples.length; setTimeout(type, 500); } 
+                else { setTimeout(type, isDeleting ? 100 : 150); }
+            }
+            if(searchInput) type();
+        }
+
+        // --- (11) دالة تفعيل تأثيرات الظهور (Fade-in) ---
+        function observeFadeInElements() {
+            // (نفس الدالة من الكود السابق، بدون تغيير)
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => { observer.observe(section); });
+        }
+        
+        // --- (12) تشغيل كل شيء عند تحميل الصفحة (معدل) ---
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('stores.json'); 
+                if (!response.ok) throw new Error('Network response was not ok');
+                allStoresData = await response.json(); 
+                
+                populateStateFilter();
+                applyFilters(); // تطبيق الفلاتر (سيعرض أول 10)
+                typingEffect();
+                
+                // ربط الأحداث
+                stateFilter.addEventListener('change', () => {
+                    updateCityFilter();
+                    applyFilters();
+                });
+                cityFilter.addEventListener('change', applyFilters);
+                searchInput.addEventListener('input', applyFilters);
+                
+                // ربط زر "عرض المزيد"
+                loadMoreButton.addEventListener('click', () => {
+                    loadMore(storesPerLoad); // تحميل 5 إضافية
+                });
+                
+            } catch (error) {
+                console.error("Failed to fetch stores data:", error);
+                const resultsSummary = document.getElementById('results-summary');
+                if(resultsSummary) resultsSummary.innerHTML = "<p class='text-center text-red-500 text-lg'>فشل تحميل بيانات المحلات. يرجى تحديث الصفحة والمحاولة لاحقاً.</p>";
+            }
+        });
+    </script>
+
+</body>
+</html>
