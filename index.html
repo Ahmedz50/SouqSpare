@@ -270,7 +270,7 @@
         // --- (1) دالة جلب وعرض المحلات (تم تعديلها) ---
         async function fetchAndRenderStores() {
             try {
-                const response = await fetch('stores.json'); // جلب الملف الخارجي
+                const response = await fetch('https://souqspare.a7medabdelrazig.workers.dev/'); // جلب الملف الخارجي
                 if (!response.ok) throw new Error('Network response was not ok');
                 const storesData = await response.json();
                 
