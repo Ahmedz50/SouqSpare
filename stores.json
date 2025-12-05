@@ -1,4 +1,40 @@
 [
+      {
+        "id": 16,
+        "name": "شركة المحرك الكوري لقطع غيار السيارات",
+        "location": {
+            "state": "نهر النيل",
+            "city": "عطبرة",
+            "address": "المنطقة الصناعية الجديدة، شمال الجمارك"
+        },
+        "image": "amk.webp",
+        "specialty": [
+            "اسبيرات",
+            "كوري"
+        ],
+        "phone": "+249125300000",
+        "whatsapp": "+24912530000",
+        "isFeatured": true,
+        "googleMapsUrl": "https://maps.google.com/?cid=14722023163094880331"
+    },
+      {
+        "id": 320,
+        "name": "شركة المركز الكوري لقطع غيار السيارات",
+        "location": {
+            "state": "الخرطوم",
+            "city": "الخرطوم",
+            "address": "شارع الحرية، ابو حمامة، جوار مدرسة العباسي"
+        },
+        "image": "amk2.webp",
+        "specialty": [
+            "اسبيرات",
+            "كوري"
+        ],
+        "phone": "+249125700000",
+        "whatsapp": "+249125700000",
+        "isFeatured": true,
+        "googleMapsUrl": "https://maps.app.goo.gl/KCVXg4NkzN7MLb3E8"
+    },
     {
         "id": 1,
         "name": "المنصوري عون الله للاسبيرات والزيوت",
@@ -259,24 +295,6 @@
         "whatsapp": "nan",
         "isFeatured": false,
         "googleMapsUrl": "https://maps.google.com/?cid=9846480940473167669"
-    },
-    {
-        "id": 16,
-        "name": "شركة المحرك الكورى لقطع غيار السيارات",
-        "location": {
-            "state": "نهر النيل",
-            "city": "عطبرة",
-            "address": ""
-        },
-        "image": "shopimg.webp",
-        "specialty": [
-            "اسبيرات",
-            "كوري"
-        ],
-        "phone": "+249125300000",
-        "whatsapp": "+24912530000",
-        "isFeatured": false,
-        "googleMapsUrl": "https://maps.google.com/?cid=14722023163094880331"
     },
     {
         "id": 17,
@@ -3617,23 +3635,6 @@
         "googleMapsUrl": "https://maps.google.com/?cid=2517383729714144886"
     },
     {
-        "id": 213,
-        "name": "شركة المحرك الكورى لقطع غيار السيارات",
-        "location": {
-            "state": "نهر النيل",
-            "city": "عطبرة",
-            "address": ""
-        },
-        "image": "shopimg.webp",
-        "specialty": [
-            "اسبيرات","كوري"
-        ],
-        "phone": "+249125300000",
-        "whatsapp": "+24912530000",
-        "isFeatured": false,
-        "googleMapsUrl": "https://maps.google.com/?cid=14722023163094880331"
-    },
-    {
         "id": 214,
         "name": "العقرباوي للاسبيرات الكورية و البابانية",
         "location": {
@@ -4116,24 +4117,6 @@
         "whatsapp": "nan",
         "isFeatured": false,
         "googleMapsUrl": "https://maps.google.com/?cid=6711579707145445610"
-    },
-    {
-        "id": 242,
-        "name": "شركة المحرك الكورى لقطع غيار السيارات",
-        "location": {
-            "state": "نهر النيل",
-            "city": "عطبرة",
-            "address": ""
-        },
-        "image": "shopimg.webp",
-        "specialty": [
-            "اسبيرات",
-            "كوري"
-        ],
-        "phone": "+249125300000",
-        "whatsapp": "+24912530000",
-        "isFeatured": false,
-        "googleMapsUrl": "https://maps.google.com/?cid=14722023163094880331"
     },
     {
         "id": 243,
