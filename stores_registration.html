@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-pt-20">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل محل جديد - سوق إسبير</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Alexandria', sans-serif; background-color: #f8f9fa; }
+        input, select, textarea { transition: all 0.3s ease; }
+        input:focus, select:focus, textarea:focus { border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen">
+
+    <!-- =========== النافبار =========== -->
+     <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- الشعار (يرجع للصفحة الرئيسية) -->
+            <a href="index.html">
+                <img src="logo.png" alt="شعار سوق إسبير" style="height: 40px;">
+            </a>
+            
+            <!-- زر تواصل معنا (ينزل للفوتر) -->
+            <a href="https://wa.me/249112410643" class="bg-blue-50 text-blue-700 px-5 py-2 rounded-full font-medium hover:bg-blue-100 transition duration-300 flex items-center">
+                <i class="fab fa-whatsapp ml-2"></i>
+                <span>تواصل معنا</span>
+            </a>
+        </nav>
+    </header> 
+
+    <!-- =========== المحتوى الرئيسي =========== -->
+    <main class="flex-grow py-12 px-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            
+            <div class="bg-blue-600 p-8 text-center text-white">
+                <h1 class="text-3xl font-bold mb-2">تسجيل محل جديد</h1>
+                <p class="text-blue-100">انضم لأكبر شبكة قطع غيار في السودان.</p>
+            </div>
+
+            <div class="p-8 md:p-10">
+                <form id="register-form" class="space-y-6">
+                    
+                    <!-- اسم المحل -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="storeName">
+                            <i class="fas fa-store text-blue-500 ml-2"></i> إسم المحل
+                        </label>
+                        <input type="text" id="storeName" name="storeName" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="مثال: ورشة الأمانة لقطع الغيار">
+                        <p class="text-xs text-gray-500 mt-1 mr-1">الأفضل أن يكون الاسم مطابقاً للافتة المحل.</p>
+                    </div>
+
+                    <!-- الموقع -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="state">الولاية</label>
+                            <select id="state" name="state" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none bg-white">
+                                <option value="" disabled selected>اختر الولاية</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="city">المدينة</label>
+                            <select id="city" name="city" required disabled class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none bg-gray-50">
+                                <option value="" disabled selected>اختر الولاية أولاً</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- العنوان -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="address">
+                            <i class="fas fa-map-pin text-blue-500 ml-2"></i> العنوان
+                        </label>
+                        <input type="text" id="address" name="address" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="مثال: المنطقة الصناعية، شارع النص">
+                    </div>
+
+                    <!-- التخصص -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="specialty">
+                            <i class="fas fa-tools text-blue-500 ml-2"></i> التخصص
+                        </label>
+                        <input type="text" id="specialty" name="specialty" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="مثال: إسبيرات كوري، زيوت، بطاريات">
+                    </div>
+
+                    <!-- صورة المحل -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">
+                            <i class="fas fa-image text-blue-500 ml-2"></i> صورة المحل أو الشعار
+                        </label>
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors" id="dropzone-label">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2" id="upload-icon"></i>
+                                    <p class="text-sm text-gray-500" id="upload-text"><span class="font-semibold">اضغط للرفع</span> أو اسحب الصورة هنا</p>
+                                    <p class="text-xs text-gray-400 mt-1">PNG, JPG (أقل من 32 ميجا)</p>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" accept="image/*" />
+                            </label>
+                        </div>
+                        <div id="file-name-preview" class="text-center mt-2 text-sm text-green-600 font-medium hidden"></div>
+                    </div>
+
+                    <!-- أرقام التواصل -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="phone">
+                                <i class="fas fa-phone text-blue-500 ml-2"></i> رقم الإتصال
+                            </label>
+                            <input type="tel" id="phone" name="phone" required pattern="249[0-9]{9}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none text-left" dir="ltr" placeholder="249xxxxxxxxx">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="whatsapp">
+                                <i class="fab fa-whatsapp text-green-500 ml-2"></i> رقم الواتساب
+                            </label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required pattern="249[0-9]{9}" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none text-left" dir="ltr" placeholder="249xxxxxxxxx">
+                        </div>
+                    </div>
+
+                    <!-- الخريطة -->
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="mapLink">
+                            <i class="fas fa-map-marked-alt text-blue-500 ml-2"></i> رابط الموقع (Google Maps)
+                        </label>
+                        <input type="url" id="mapLink" name="mapLink" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none text-left" dir="ltr" placeholder="https://maps.app.goo.gl/...">
+                    </div>
+
+                    <!-- زر الإرسال -->
+                    <div class="pt-4">
+                        <button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl text-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-[1.01] flex items-center justify-center">
+                            <span>تسجيل المحل</span>
+                            <i class="fas fa-check-circle mr-2"></i>
+                        </button>
+                    </div>
+
+                </form>
+                
+                <!-- رسالة النجاح -->
+                <div id="success-message" class="hidden text-center py-10">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">تم التسجيل بنجاح!</h3>
+                    <p class="text-gray-600 mb-6">تم رفع بياناتك وصورة المحل. سنراجع الطلب قريباً.</p>
+                    <a href="index.html" class="text-blue-600 font-bold hover:underline">العودة للصفحة الرئيسية</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- =========== الفوتر =========== -->
+       <footer id="footer-contact" class="bg-gray-800 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- العمود الأول: عن الموقع -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <img src="logo2.png" alt="شعار سوق إسبير" style="height: 45px;">
+                    </h3>
+                    <p class="text-gray-400 max-w-md">
+                        أول وأكبر دليل إلكتروني يربط أصحاب السيارات بمحلات قطع الغيار في جميع أنحاء السودان. مهمتنا هي جعل عملية البحث عن قطع الغيار سهلة، سريعة، وموثوقة.
+                    </p>
+                </div>
+
+                <!-- العمود الثاني: روابط سريعة -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a></li>
+                        
+                        <li><a href="index.html#features-users" class="hover:text-blue-400 transition-colors">لأصحاب السيارات</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- العمود الثالث: تواصل معنا -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">تابعنا وتواصل معنا</h4>
+                    <p class="text-gray-400 mb-4">انضم إلينا على شبكات التواصل الاجتماعي.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.tiktok.com/@souqspare" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-pink-500 transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/249112410643" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl hover:bg-green-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+            <div class="text-center text-gray-500">
+                <p>&copy; 2025 سوق إسبير. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========== السكربتات =========== -->
+    <script>
+        const sudanStates = {
+            "الخرطوم": ["الخرطوم", "أمدرمان", "بحري"],
+            "الجزيرة": ["ود مدني", "الحصاحيصا", "المناقل"],
+            "البحر الأحمر": ["بورتسودان", "سواكن", "طوكر"],
+            "كسلا": ["كسلا", "حلفا الجديدة"],
+            "القضارف": ["القضارف", "دوكة", "القلابات"],
+            "سنار": ["سنجة", "الدمازين", "أبو حجار"],
+            "النيل الأبيض": ["كوستي", "ربك", "الدويم"],
+            "النيل الأزرق": ["الدمازين", "الكرمك", "الروصيرص"],
+            "الشمالية": ["دنقلا", "وادي حلفا", "كريمة"],
+            "نهر النيل": ["عطبرة", "الدامر", "شندي", "بربر"],
+            "غرب كردفان": ["الفولة", "النهود", "أبو زبد"],
+            "جنوب كردفان": ["كادقلي", "الدلنج", "هبيلا"],
+            "شمال دارفور": ["الفاشر", "مليط", "كبكابية"],
+            "غرب دارفور": ["الجنينة", "كلبس"],
+            "جنوب دارفور": ["نيالا", "كاس"],
+            "شرق دارفور": ["الضعين", "أبو كارنكا", "عديلة"],
+            "وسط دارفور": ["زالنجي", "نيرتتي", "روكرو"]
+        };
+
+        const stateSelect = document.getElementById('state');
+        const citySelect = document.getElementById('city');
+        const form = document.getElementById('register-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+        const fileInput = document.getElementById('dropzone-file');
+        const fileNamePreview = document.getElementById('file-name-preview');
+        const uploadLabel = document.getElementById('dropzone-label');
+
+        // مفتاح ImgBB API
+        const IMGBB_API_KEY = '80f233ea0f49f57531ced66384c8d9df';
+
+        // ============================================================
+        // ⚠️ هام: ضع رابط Apps Script الجديد هنا
+        // ============================================================
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycCrWleWnfxbHY5hju3fd7G7ZLgI3uL2gIfFqqAmn6mqn7KFuzqaTCgA-WwBt7I_fExg/exec'; 
+
+        // ملء الولايات
+        Object.keys(sudanStates).sort().forEach(state => {
+            const option = document.createElement('option');
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
+        });
+
+        // تحديث المدن
+        stateSelect.addEventListener('change', function() {
+            citySelect.innerHTML = '<option value="" disabled selected>اختر المدينة</option>';
+            if (this.value && sudanStates[this.value]) {
+                citySelect.disabled = false;
+                citySelect.classList.remove('bg-gray-50');
+                citySelect.classList.add('bg-white');
+                sudanStates[this.value].sort().forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+            } else {
+                citySelect.disabled = true;
+                citySelect.classList.add('bg-gray-50');
+            }
+        });
+
+        // اختيار الملف
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                fileNamePreview.textContent = `تم اختيار: ${this.files[0].name}`;
+                fileNamePreview.classList.remove('hidden');
+                uploadLabel.classList.add('border-green-500', 'bg-green-50');
+            }
+        });
+
+        // إرسال النموذج
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري رفع الصورة والبيانات...';
+            submitBtn.classList.add('opacity-75');
+
+            try {
+                let imgUrl = "No image";
+
+                // 1. رفع الصورة إلى ImgBB (إذا وجدت)
+                if (fileInput.files.length > 0) {
+                    const formData = new FormData();
+                    formData.append('image', fileInput.files[0]);
+                    
+                    const imgResponse = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const imgResult = await imgResponse.json();
+                    
+                    if (imgResult.success) {
+                        imgUrl = imgResult.data.url;
+                    } else {
+                        throw new Error("فشل رفع الصورة: " + (imgResult.error ? imgResult.error.message : "خطأ غير معروف"));
+                    }
+                }
+
+                // 2. إرسال البيانات إلى Google Sheet
+                const sheetData = {
+                    storeName: document.getElementById('storeName').value,
+                    state: document.getElementById('state').value,
+                    city: document.getElementById('city').value,
+                    address: document.getElementById('address').value,
+                    specialty: document.getElementById('specialty').value,
+                    phone: document.getElementById('phone').value,
+                    whatsapp: document.getElementById('whatsapp').value,
+                    mapLink: document.getElementById('mapLink').value,
+                    imageUrl: imgUrl // إرسال الرابط المباشر
+                };
+
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(sheetData)
+                });
+
+                // 3. النجاح
+                form.style.display = 'none';
+                successMessage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('حدث خطأ أثناء العملية: ' + error.message);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.classList.remove('opacity-75');
+            }
+        });
+    </script>
+</body>
+</html>
